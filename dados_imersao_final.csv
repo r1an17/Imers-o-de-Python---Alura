@@ -1,3 +1,0 @@
-git add dados_imersao_final.csv
-git commit -m "Adiciona CSV com dados corretos"
-git push origin main
