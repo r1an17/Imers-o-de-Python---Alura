@@ -11,7 +11,12 @@ st.set_page_config(
 )
 
 # --- Carregamento dos dados ---
-df = pd.read_csv("Dados_imersão_final.csv")
+@st.cache_data
+def carregar_dados():
+    # Lê o CSV diretamente do repositório local (na raiz do projeto)
+    return pd.read_csv("dados-imersao-final.csv")
+
+df = carregar_dados()
 
 # --- Barra Lateral (Filtros) ---
 st.sidebar.header("🔍 Filtros")
@@ -138,3 +143,4 @@ with col_graf4:
 st.subheader("Dados Detalhados")
 
 st.dataframe(df_filtrado)
+
